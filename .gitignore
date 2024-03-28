@@ -1,0 +1,7 @@
+.DS_Store
+*.pyc
+*.egg-info
+*.swp
+tags
+quantbit_manufacturing/docs/current
+node_modules/

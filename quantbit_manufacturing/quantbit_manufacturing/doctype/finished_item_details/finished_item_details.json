@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-02-27 10:39:48.547405",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "column_break_3sdz6",
+  "qty",
+  "column_break_top41",
+  "okqty",
+  "rejqty",
+  "updatedqty",
+  "section_break_bqamg",
+  "reference_id",
+  "component_manifest"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Finished Item Code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Finished Item Name"
+  },
+  {
+   "fieldname": "column_break_3sdz6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "fieldname": "updatedqty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Updated Qty to manufacturing",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty to Manufacturing",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_top41",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "fieldname": "okqty",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Ok Qty",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "rejqty",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Rejected Qty",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_bqamg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reference_id",
+   "fieldtype": "Data",
+   "label": "Reference_id"
+  },
+  {
+   "fieldname": "component_manifest",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Component Manifest",
+   "options": "Component Manifest"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-03-09 14:03:31.175305",
+ "modified_by": "Administrator",
+ "module": "Quantbit Manufacturing",
+ "name": "Finished Item Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

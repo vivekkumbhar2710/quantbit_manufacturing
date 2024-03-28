@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include quantbit_manufacturing *.css
+recursive-include quantbit_manufacturing *.csv
+recursive-include quantbit_manufacturing *.html
+recursive-include quantbit_manufacturing *.ico
+recursive-include quantbit_manufacturing *.js
+recursive-include quantbit_manufacturing *.json
+recursive-include quantbit_manufacturing *.md
+recursive-include quantbit_manufacturing *.png
+recursive-include quantbit_manufacturing *.py
+recursive-include quantbit_manufacturing *.svg
+recursive-include quantbit_manufacturing *.txt
+recursive-exclude quantbit_manufacturing *.pyc

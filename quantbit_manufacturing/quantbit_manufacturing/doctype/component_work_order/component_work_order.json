@@ -1,0 +1,508 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-01-24 16:28:16.406173",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "column_break_0d6bi",
+  "naming_series",
+  "column_break_qpyyh",
+  "date",
+  "section_break_qi9gz",
+  "supervisor",
+  "operator",
+  "column_break_bqoz9",
+  "supervisor_name",
+  "operator_name",
+  "column_break_s66ik",
+  "shift_time",
+  "minutes",
+  "column_break_y3s9h",
+  "posting_date",
+  "section_break_x63ky",
+  "machine_code",
+  "column_break_yla8a",
+  "machine_name",
+  "column_break_0ytpu",
+  "core_type",
+  "column_break_tk7o8",
+  "core_name",
+  "section_break_oapg3",
+  "power_reading_initial",
+  "column_break_s757m",
+  "power_reading_final",
+  "column_break_hkb58",
+  "power_consumed",
+  "section_break_ujtiw",
+  "finished_item_group",
+  "finished_item_code",
+  "finished_item_name",
+  "quantity_to_manufacturing",
+  "column_break_nlrgo",
+  "finished_item_details",
+  "section_break_10ovl",
+  "column_break_rht6h",
+  "column_break_jwgah",
+  "column_break_t1pxc",
+  "column_break_jw4g9",
+  "ok_quantity",
+  "column_break_vfpkv",
+  "rejected_quantity",
+  "column_break_zw893",
+  "updated_quantity_to_manufacturing",
+  "section_break_v9ujx",
+  "warehouse_details_section",
+  "source_warehouse",
+  "column_break_09srv",
+  "target_warehouse",
+  "component_raw_material_details_section",
+  "get_data",
+  "component_raw_material_details",
+  "component_raw_item_section",
+  "component_raw_item",
+  "raw_materials_section",
+  "component_finished_item",
+  "section_break_djo21",
+  "operational_cost",
+  "column_break_gzte0",
+  "scrap_items",
+  "section_break_zlp7c",
+  "process_loss",
+  "amended_from",
+  "rate_for_updated_quantity",
+  "rate_of_quantity",
+  "component_manifest",
+  "test_editor"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_bqoz9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qpyyh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_x63ky",
+   "fieldtype": "Section Break",
+   "label": "Machine Details"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "CWO-.FY.-.###.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ujtiw",
+   "fieldtype": "Section Break",
+   "label": "Finished Item Details"
+  },
+  {
+   "fieldname": "finished_item_code",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Finished Item Code",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_t1pxc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "finished_item_code.item_name",
+   "fieldname": "finished_item_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Finished Item Name"
+  },
+  {
+   "fieldname": "component_raw_item_section",
+   "fieldtype": "Section Break",
+   "label": "Component Raw Item"
+  },
+  {
+   "fieldname": "component_raw_item",
+   "fieldtype": "Table",
+   "options": "Component Raw Item"
+  },
+  {
+   "fieldname": "raw_materials_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Component Finished Item"
+  },
+  {
+   "fieldname": "component_finished_item",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "options": "Component Finished Item"
+  },
+  {
+   "fieldname": "section_break_djo21",
+   "fieldtype": "Section Break",
+   "label": "Operational Cost"
+  },
+  {
+   "fieldname": "column_break_gzte0",
+   "fieldtype": "Section Break",
+   "label": "Scrap Information"
+  },
+  {
+   "fieldname": "process_loss",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Process Loss %",
+   "precision": "2"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Component Work Order",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_rht6h",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "quantity_to_manufacturing",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Quantity to Manufacturing",
+   "precision": "2"
+  },
+  {
+   "fieldname": "warehouse_details_section",
+   "fieldtype": "Section Break",
+   "label": "Warehouse Details"
+  },
+  {
+   "fieldname": "source_warehouse",
+   "fieldtype": "Link",
+   "label": "Source Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_09srv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "target_warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Target Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_nlrgo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "rate_of_quantity",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Rate of Quantity",
+   "precision": "2"
+  },
+  {
+   "fieldname": "updated_quantity_to_manufacturing",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Updated Quantity to Manufacturing",
+   "precision": "2"
+  },
+  {
+   "fieldname": "rate_for_updated_quantity",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Rate for Updated Quantity",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_jwgah",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vfpkv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "component_manifest",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Component Manifest",
+   "options": "Component Manifest"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "operational_cost",
+   "fieldtype": "Table",
+   "options": "Additional Cost for Work Order"
+  },
+  {
+   "fetch_from": "supervisor.supervisor_name",
+   "fieldname": "supervisor_name",
+   "fieldtype": "Data",
+   "label": "Supervisor Name"
+  },
+  {
+   "fetch_from": "operator.operator_name",
+   "fieldname": "operator_name",
+   "fieldtype": "Data",
+   "label": "Operator Name"
+  },
+  {
+   "fieldname": "shift_time",
+   "fieldtype": "Link",
+   "label": "Shift Time",
+   "options": "Shift Time"
+  },
+  {
+   "fieldname": "section_break_qi9gz",
+   "fieldtype": "Section Break",
+   "label": "Supervisor , Operator , Shift Details"
+  },
+  {
+   "fieldname": "column_break_s66ik",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "label": "Operator ID",
+   "options": "Operator Master",
+   "remember_last_selected_value": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "supervisor",
+   "fieldtype": "Link",
+   "label": "Supervisor ID",
+   "options": "Supervisor Master",
+   "remember_last_selected_value": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "ok_quantity",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Ok Quantity",
+   "precision": "0"
+  },
+  {
+   "fieldname": "rejected_quantity",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Rejected Quantity"
+  },
+  {
+   "fieldname": "scrap_items",
+   "fieldtype": "Table",
+   "label": "Scrap Items",
+   "options": "Scrap Details"
+  },
+  {
+   "fieldname": "section_break_zlp7c",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_y3s9h",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "shift_time.minutes",
+   "fieldname": "minutes",
+   "fieldtype": "Int",
+   "label": "Minutes"
+  },
+  {
+   "fieldname": "machine_code",
+   "fieldtype": "Link",
+   "label": "Machine Code",
+   "options": "Core Manufacturing Machine"
+  },
+  {
+   "fieldname": "column_break_yla8a",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "machine_code.machine_name",
+   "fieldname": "machine_name",
+   "fieldtype": "Data",
+   "label": "Machine Name"
+  },
+  {
+   "fieldname": "section_break_oapg3",
+   "fieldtype": "Section Break",
+   "label": "Power Reading Details"
+  },
+  {
+   "fetch_from": "machine_code.core_type",
+   "fieldname": "core_type",
+   "fieldtype": "Link",
+   "label": "Core Type",
+   "options": "Core Type"
+  },
+  {
+   "fieldname": "column_break_0ytpu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_editor",
+   "fieldtype": "Text Editor",
+   "label": "Test Editor"
+  },
+  {
+   "fieldname": "power_reading_initial",
+   "fieldtype": "Float",
+   "label": "Power Reading Initial",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_s757m",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "power_reading_final",
+   "fieldtype": "Float",
+   "label": "Power Reading Final",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hkb58",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "power_consumed",
+   "fieldtype": "Float",
+   "label": "Power Consumed",
+   "precision": "2"
+  },
+  {
+   "fieldname": "section_break_v9ujx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "finished_item_details",
+   "fieldtype": "Table",
+   "label": "Finished Item Details",
+   "options": "Finished Item Details"
+  },
+  {
+   "fieldname": "column_break_0d6bi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "finished_item_group",
+   "fieldtype": "Link",
+   "label": "Finished Item Group",
+   "options": "Item Group"
+  },
+  {
+   "fieldname": "column_break_tk7o8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "machine_code.core_name",
+   "fieldname": "core_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Core Name"
+  },
+  {
+   "fieldname": "section_break_10ovl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_jw4g9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_zw893",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "component_raw_material_details_section",
+   "fieldtype": "Section Break",
+   "label": "Component raw material details"
+  },
+  {
+   "fieldname": "component_raw_material_details",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "options": "Component raw material details"
+  },
+  {
+   "fieldname": "get_data",
+   "fieldtype": "Button",
+   "label": "Get Data"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Stock Entry",
+   "link_fieldname": "custom_component_work_order"
+  }
+ ],
+ "modified": "2024-03-18 11:06:03.082783",
+ "modified_by": "Administrator",
+ "module": "Quantbit Manufacturing",
+ "name": "Component Work Order",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

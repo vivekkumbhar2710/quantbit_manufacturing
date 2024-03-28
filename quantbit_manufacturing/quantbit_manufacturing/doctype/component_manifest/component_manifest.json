@@ -1,0 +1,263 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:finished_item_code",
+ "creation": "2024-01-24 15:39:28.740304",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "column_break_intct",
+  "company",
+  "column_break_bqoz9",
+  "enable",
+  "column_break_qpyyh",
+  "date",
+  "section_break_x63ky",
+  "section_break_ujtiw",
+  "finished_item_group",
+  "column_break_pjf2q",
+  "finished_item_code",
+  "column_break_t1pxc",
+  "finished_item_name",
+  "column_break_nn9zn",
+  "quantity_to_manufacturing",
+  "select_core_type_section",
+  "core_type",
+  "column_break_derhh",
+  "core_name",
+  "core_manufacturing_section",
+  "core_manufacturing",
+  "raw_materials_section",
+  "raw_materials",
+  "section_break_djo21",
+  "column_break_d4pqv",
+  "column_break_gzte0",
+  "process_loss",
+  "amended_from",
+  "rate_of_quantity",
+  "downtime_section",
+  "downtime_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_bqoz9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qpyyh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_x63ky",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "CM-.FY.-.###."
+  },
+  {
+   "fieldname": "section_break_ujtiw",
+   "fieldtype": "Section Break",
+   "label": "Finished Item Details"
+  },
+  {
+   "fieldname": "process_loss",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Process Loss %",
+   "precision": "2"
+  },
+  {
+   "fieldname": "finished_item_code",
+   "fieldtype": "Link",
+   "label": "Finished Item Code(BOM)",
+   "options": "Item",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_t1pxc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "finished_item_code.item_name",
+   "fieldname": "finished_item_name",
+   "fieldtype": "Data",
+   "label": "Finished Item Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "core_manufacturing_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Core Manufacturing"
+  },
+  {
+   "fieldname": "core_manufacturing",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "options": "Core Manufacturing"
+  },
+  {
+   "fieldname": "raw_materials_section",
+   "fieldtype": "Section Break",
+   "label": "Raw Materials"
+  },
+  {
+   "fieldname": "raw_materials",
+   "fieldtype": "Table",
+   "options": "Raw Materials for Component Manifest"
+  },
+  {
+   "fieldname": "column_break_d4pqv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_gzte0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_djo21",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_nn9zn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "quantity_to_manufacturing",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity to Manufacturing",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Component Manifest",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "1",
+   "fieldname": "enable",
+   "fieldtype": "Check",
+   "label": "Is BOM Enable"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "rate_of_quantity",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Rate of Quantity",
+   "precision": "2"
+  },
+  {
+   "fieldname": "downtime_section",
+   "fieldtype": "Section Break",
+   "label": "Downtime"
+  },
+  {
+   "fieldname": "downtime_details",
+   "fieldtype": "Text Editor",
+   "label": "Downtime Details"
+  },
+  {
+   "fieldname": "column_break_intct",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "finished_item_group",
+   "fieldtype": "Link",
+   "label": "Finished Item Group",
+   "options": "Item Group"
+  },
+  {
+   "fieldname": "column_break_pjf2q",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "select_core_type_section",
+   "fieldtype": "Section Break",
+   "label": "Select Core Type"
+  },
+  {
+   "fieldname": "core_type",
+   "fieldtype": "Link",
+   "label": "Core Type",
+   "options": "Core Type"
+  },
+  {
+   "fieldname": "column_break_derhh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "core_type.core_type",
+   "fieldname": "core_name",
+   "fieldtype": "Data",
+   "label": "Core Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Component Work Order",
+   "link_fieldname": "component_manifest"
+  }
+ ],
+ "modified": "2024-03-18 12:47:02.879880",
+ "modified_by": "Administrator",
+ "module": "Quantbit Manufacturing",
+ "name": "Component Manifest",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

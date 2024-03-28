@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:machine_name",
+ "creation": "2024-02-12 11:34:23.731511",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "column_break_czgap",
+  "company",
+  "abbreviation",
+  "section_break_7jxoy",
+  "machine_type",
+  "column_break_f2umz",
+  "machine_name",
+  "core_type",
+  "core_name",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "CORE-"
+  },
+  {
+   "fieldname": "column_break_czgap",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "section_break_7jxoy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "machine_type",
+   "fieldtype": "Data",
+   "label": "Machine Type"
+  },
+  {
+   "fieldname": "column_break_f2umz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "machine_name",
+   "fieldtype": "Data",
+   "label": "Machine Name"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Core Manufacturing Machine",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "core_type",
+   "fieldtype": "Link",
+   "label": "Core Type",
+   "options": "Core Type"
+  },
+  {
+   "fetch_from": "core_type.core_type",
+   "fieldname": "core_name",
+   "fieldtype": "Data",
+   "label": "Core Name"
+  },
+  {
+   "fetch_from": "company.abbr",
+   "fieldname": "abbreviation",
+   "fieldtype": "Data",
+   "label": "Abbreviation"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-03-18 11:28:40.834865",
+ "modified_by": "Administrator",
+ "module": "Quantbit Manufacturing",
+ "name": "Core Manufacturing Machine",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "machine_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
